@@ -2,6 +2,8 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 export interface UserData {
   id: string;
@@ -56,7 +58,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -77,6 +79,12 @@ export class AppComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      width: '600px',
+    });
   }
 
 }
