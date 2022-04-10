@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add Product</h1>
+<h1 mat-dialog-title>{{data.title}} Product</h1>
 <div mat-dialog-content>
     <form [formGroup]="productForm">
         <div>
@@ -49,5 +49,6 @@
 </div>
 <div mat-dialog-actions align="end">
     <button #closeBtn class="btn btn-secondary" mat-dialog-close>Close</button>
-    <button class="btn btn-primary mx-2" (click)="addProduct()">Add Product</button>
+    <button *ngIf="data.title === 'Add'" class="btn btn-primary mx-2" (click)="addProduct()">{{data.title}} Product</button>
+    <button *ngIf="data.title === 'Edit'" class="btn btn-primary mx-2" (click)="editProduct()">{{data.title}} Product</button>
 </div>

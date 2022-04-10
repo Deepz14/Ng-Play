@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { ProductService } from './services/product.service';
 
@@ -16,40 +16,6 @@ export interface ProductData {
   comment: string
 }
 
-
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -62,16 +28,22 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog, private prdService: ProductService) {}
+  constructor(private dialog: MatDialog, private prdService: ProductService) {}
 
   ngOnInit(): void {
     this.getProducts();
+
+    this.prdService.getProductState().subscribe((state: any) => {
+      if (state){
+        this.getProducts();
+        this.prdService.resetProductState();
+      }
+    })
   }
 
 
   getProducts(){
     this.prdService.getProduct().subscribe((res: any) => {
-      console.log(res);
        // Assign the data to the data source for the table to render
       this.dataSource = new MatTableDataSource(res)
       this.dataSource.paginator = this.paginator;
@@ -95,7 +67,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '600px',
+      data: {title: 'Add'}
     });
+  }
+
+  editProduct(rowId: any){
+    this.prdService.editProductState(rowId);
+    this.dialog.open(DialogComponent, {
+      width: '600px',
+      data: {title: 'Edit'}
+    })
   }
 
 }

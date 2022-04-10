@@ -12,11 +12,56 @@
     {
       "name": "Banana",
       "category": "fruits",
+      "date": "2022-04-02T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "400",
+      "comment": "Too High",
+      "id": 2
+    },
+    {
+      "name": "Carrot",
+      "category": "vegetable",
       "date": "2022-04-05T18:30:00.000Z",
       "quality": "Brand New",
-      "price": "40",
+      "price": "50",
       "comment": "nice",
-      "id": 2
+      "id": 3
+    },
+    {
+      "name": "Mouse",
+      "category": "electronics",
+      "date": "2022-04-05T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "450",
+      "comment": "Worth For Price",
+      "id": 4
+    },
+    {
+      "name": "Pine Apple",
+      "category": "fruits",
+      "date": "2022-04-05T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "120",
+      "comment": "Nice",
+      "id": 5
+    },
+    {
+      "name": "Beans",
+      "category": "vegetable",
+      "date": "2022-04-03T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "32",
+      "comment": "Superb",
+      "id": 6
+    },
+    {
+      "name": "Apple",
+      "category": "fruits",
+      "date": "2022-04-06T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "150",
+      "comment": "Good",
+      "id": 7
     }
   ]
 }
