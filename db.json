@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "monitor",
+      "name": "Monitor",
       "category": "electronics",
       "date": "2022-04-04T18:30:00.000Z",
       "quality": "Brand New",
@@ -10,11 +10,11 @@
       "id": 1
     },
     {
-      "name": "Banana",
+      "name": "Orange",
       "category": "fruits",
       "date": "2022-04-02T18:30:00.000Z",
       "quality": "Brand New",
-      "price": "400",
+      "price": "200",
       "comment": "Too High",
       "id": 2
     },
@@ -55,13 +55,22 @@
       "id": 6
     },
     {
-      "name": "Apple",
-      "category": "fruits",
-      "date": "2022-04-06T18:30:00.000Z",
+      "name": "Camera",
+      "category": "electronics",
+      "date": "2022-04-08T18:30:00.000Z",
       "quality": "Brand New",
-      "price": "150",
-      "comment": "Good",
+      "price": "30000",
+      "comment": "Cool",
       "id": 7
+    },
+    {
+      "name": "Smart Watch",
+      "category": "electronics",
+      "date": "2022-04-03T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "3000",
+      "comment": "Nice",
+      "id": 8
     }
   ]
 }

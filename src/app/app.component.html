@@ -45,7 +45,7 @@
                     <!-- Category Column -->
                     <ng-container matColumnDef="category">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
-                        <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+                        <td mat-cell *matCellDef="let row"> {{row.category | titlecase}} </td>
                     </ng-container>
             
                     <!-- Date Column -->
@@ -69,7 +69,7 @@
                     <!-- Comment Column -->
                     <ng-container matColumnDef="comment">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Comment </th>
-                        <td mat-cell *matCellDef="let row"> {{row.comment}} </td>
+                        <td mat-cell *matCellDef="let row"> {{row.comment | titlecase}} </td>
                     </ng-container>
 
                     <!-- Action Column -->
@@ -79,7 +79,7 @@
                             <button mat-icon-button color="primary" title="Edit" (click)="editProduct(row.id)">
                                 <mat-icon>edit</mat-icon>
                             </button>
-                            <button mat-icon-button color="warn" title="Delete">
+                            <button mat-icon-button color="warn" title="Delete" (click)="deleteProduct(row.id)">
                                 <mat-icon>delete</mat-icon>
                             </button>
                         </td>
@@ -99,6 +99,3 @@
         </div>
     </div>
 </div>
-
-
-<!-------- Modal Dialog ------------>

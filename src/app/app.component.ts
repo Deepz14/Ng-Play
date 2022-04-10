@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { ProductService } from './services/product.service';
 
@@ -21,7 +21,7 @@ export interface ProductData {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'category', 'date', 'quality', 'price', 'comment', 'actions'];
   dataSource!: MatTableDataSource<any>;
 
@@ -51,10 +51,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     })
   }
 
-  ngAfterViewInit() {
-
-  }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -76,6 +72,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.dialog.open(DialogComponent, {
       width: '600px',
       data: {title: 'Edit'}
+    })
+  }
+
+  deleteProduct(rowId: any){
+    this.prdService.deleteProduct(rowId).subscribe((res: any) => {
+      this.prdService.addProductState();
+    }, error => {
+      console.log(error);
     })
   }
 
