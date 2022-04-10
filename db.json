@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "name": "monitor",
+      "category": "electronics",
+      "date": "2022-04-04T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "50000",
+      "comment": "good",
+      "id": 1
+    },
+    {
+      "name": "Banana",
+      "category": "fruits",
+      "date": "2022-04-05T18:30:00.000Z",
+      "quality": "Brand New",
+      "price": "40",
+      "comment": "nice",
+      "id": 2
+    }
+  ]
+}
