@@ -7,16 +7,6 @@ import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { ProductService } from '../../services/product.service';
 import { DataTableDirective } from 'angular-datatables';
 
-export interface ProductData {
-  id: string | number;
-  prd_name: string;
-  category: string;
-  date: Date | string;
-  prd_frshness: string;
-  price: string;
-  comment: string
-}
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
