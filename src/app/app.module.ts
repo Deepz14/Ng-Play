@@ -5,17 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
-import { DialogComponent } from './dialog/dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
-import { ProductComponent } from './product/product.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DialogComponent,
-    ProductComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +19,7 @@ import { ProductComponent } from './product/product.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MaterialModule,
+    SharedModule,
     DataTablesModule
   ],
   providers: [],

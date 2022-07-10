@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { ProductService } from '../services/product.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { ProductService } from '../../services/product.service';
 import { DataTableDirective } from 'angular-datatables';
 
 export interface ProductData {
@@ -53,7 +53,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
     }
   }
 
-
   getProducts(){
     this.prdService.getProduct().subscribe((res: any) => {
       this.products = res
@@ -95,5 +94,4 @@ export class ProductComponent implements OnInit, AfterViewInit {
       console.log(error);
     })
   }
-
 }

@@ -2,7 +2,7 @@ import { Component, ElementRef, Inject, OnInit, ViewChild, OnDestroy } from '@an
 import { FormBuilder, FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-dialog',
