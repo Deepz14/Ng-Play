@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="container login-container py-5" style="min-height: 90vh;">
+    <div class="row py-5">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 m-auto">
+            <div class="row">
+                <div class="col login-card">
+                    <h2 class="display-4 text-center">Sign In To Your Account </h2>
+                    <p class="text-center">
+                        Don't have an account? <a [routerLink]="['/auth']" class="text-underline text-dark">Sign up</a>
+                    </p>
+                    <form>
+                        <div class="form-row pt-2">
+                            <div class="form-group col-12">
+                                <label>Email*</label>
+                                <input type="text" class="form-control shadow-none" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group col-12">
+                                <label>Password*</label>
+                                <input type="password" class="form-control shadow-none" placeholder="Enter a password">
+                            </div>
+                            <div class="form-group col-12 d-flex justify-content-between">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="remember-me-check">
+                                    <label class="form-check-label" for="remember-me-check">Remember me</label>
+                                </div>
+                                <a [routerLink]="['/auth']" class="text-underline text-dark">Forgot Password?</a>
+                            </div>
+                            <div class="form-group col-12">
+                                <button type="submit" class="btn btn-secondary btn-block">Sign In</button>
+                            </div>
+                            <div class="form-group col-12">
+                                <p class="text-center my-2">or</p>
+                                <button type="submit" class="btn btn-danger btn-block">Continue with Google</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
