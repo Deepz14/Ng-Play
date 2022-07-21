@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { PageComponent } from './page.component';
 import { ProductComponent } from './product/product.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
     {
@@ -17,7 +20,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    declarations: [PageComponent, ProductComponent],
+    declarations: [PageComponent, ProductComponent, SideNavComponent, FooterComponent, HeaderComponent],
     imports: [
         CommonModule,
         SharedModule,

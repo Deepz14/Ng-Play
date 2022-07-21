@@ -1,0 +1,44 @@
+.sidebar{
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(238, 46, 46, 0.645);
+}
+.sidebar-brand{
+    padding: 1rem 0rem 1rem 2rem;
+    height: 75px;
+    color: #fff;
+}
+.sidebar-brand span{
+    display: inline-block;
+    padding-right: 1rem;
+}
+.sidebar-menu{
+    height: 100%;
+}
+.sidebar-menu li{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.sidebar-menu a {
+    display: block;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.sidebar-menu .menu-icon{
+    font-size: 1.2rem;
+    padding-right: 1.3rem;
+}
+.sidebar-menu a.active{
+    background-color: #DDD;
+    border-radius: 0.8rem 0 0 0.8rem;
+    padding: 10px 5px;
+}
+ul > li{
+    list-style: none;
+}
+li a{
+    text-transform: none;
+}
