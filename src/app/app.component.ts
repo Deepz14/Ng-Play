@@ -10,7 +10,7 @@ import { DataTableDirective } from 'angular-datatables';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(DataTableDirective) dtElement!: DataTableDirective
