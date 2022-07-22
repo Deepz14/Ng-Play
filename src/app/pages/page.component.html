@@ -1,77 +1,8 @@
-<!-- <div class="layout-container"> -->
-    <!-- side nav -->
-    <!-- <div class="layout-page-side-navbar"> -->
-        <!-- <div class="bg-dark p-2">
-           <h2 class="text-white px-5"> 
-                Ng Play 
-            </h2> 
-        </div> -->
-
-        <!-- <div class="mt-2">
-            <nav id="sidebar" class="sidebar-wrapper">
-                <div class="sidebar-content">
-                    <div class="sidebar-menu">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex text-dark active pt-3" [routerLink]="['/page']" routerLinkActive="router-link-active">
-                                    <mat-icon>shopping_basket</mat-icon>
-                                    <h4 class="px-4">Product</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex text-dark pt-3" [routerLink]="['/page']" >
-                                    <mat-icon>person_outline</mat-icon>
-                                    <h4 class="px-4">Customers</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex text-dark pt-3" [routerLink]="['/page']">
-                                    <mat-icon>list_alt</mat-icon>
-                                    <h4 class="px-4">Services</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex text-dark pt-3" [routerLink]="['/page']">
-                                    <mat-icon>report</mat-icon>
-                                    <h4 class="px-4">Reports</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex text-dark pt-3" [routerLink]="['/page']" routerLinkActive="router-link-active">
-                                    <mat-icon>storage</mat-icon>
-                                    <h4 class="px-4">Data</h4>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-    </div> -->
-
-    <!-- Main content -->
-    <!-- <div style="width: 100%;">
-        <div>
-            <mat-toolbar>
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                    <mat-icon>menu</mat-icon>
-                </button>
-                <span class="example-spacer"></span>
-                <h6>Hello Deepz</h6>
-            </mat-toolbar>
-        </div>
-        
-        <router-outlet></router-outlet>
-    </div>
-</div> -->
 <div class="wrapper">
     <app-side-nav></app-side-nav>
+    <app-header></app-header>
     <div class="main-content">
-        <app-header></app-header>
-        <div class="main-pages">
-            <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
     </div>
     <!-- <app-footer></app-footer> -->
 </div>  
