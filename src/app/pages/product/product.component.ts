@@ -71,7 +71,7 @@ export class ProductComponent implements OnInit {
   deleteProduct(rowId: any){
     this.prdService.deleteProduct(rowId).subscribe((res: any) => {
       this.prdService.addProductState();
-    }, error => {
+    }, (error) => {
       console.log(error);
     })
   }
