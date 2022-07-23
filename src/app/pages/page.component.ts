@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 
 @Component({
     selector: 'app-page',
@@ -6,4 +6,9 @@ import { Component} from '@angular/core';
     styleUrls: ['./page.component.scss']
 })
 
-export class PageComponent {}
+export class PageComponent implements AfterViewInit {
+    constructor(){}
+
+    ngAfterViewInit(): void {
+    }
+}

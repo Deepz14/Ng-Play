@@ -1,9 +1,7 @@
 .header{
-    display: flex;
     position: fixed;
     padding: 10px 16px;
-    width: calc(100% - 260px);
-    white-space: nowrap;
+    width: calc(100vw - 260px);
     box-shadow: 1px 0px 1px 0px #aaa;
     z-index: 1000;
     top: 0;

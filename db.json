@@ -18,7 +18,7 @@
       "price": "200",
       "comment": "Too High",
       "id": 2,
-       "active": true
+      "active": true
     },
     {
       "name": "Carrot",
@@ -28,7 +28,7 @@
       "price": "50",
       "comment": "nice",
       "id": 3,
-       "active": false
+      "active": false
     },
     {
       "name": "Mouse",
@@ -38,7 +38,7 @@
       "price": "450",
       "comment": "Worth For Price",
       "id": 4,
-       "active": true
+      "active": true
     },
     {
       "name": "Pine Apple",
@@ -48,137 +48,7 @@
       "price": "120",
       "comment": "Nice",
       "id": 5,
-       "active": false
-    },
-    {
-      "name": "Beans",
-      "category": "vegetable",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "32",
-      "comment": "Superb",
-      "id": 6,
-       "active": true
-    },
-    {
-      "name": "Camera",
-      "category": "electronics",
-      "date": "2022-04-08T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "30000",
-      "comment": "Cool",
-      "id": 7,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
-    },
-    {
-      "name": "Smart Watch",
-      "category": "electronics",
-      "date": "2022-04-03T18:30:00.000Z",
-      "quality": "Brand New",
-      "price": "3000",
-      "comment": "Nice",
-      "id": 8,
-       "active": true
+      "active": false
     }
   ]
 }

@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DataTablesModule } from 'angular-datatables';
 import { SharedModule } from './shared/shared.module';
 import { ErrorComponent } from './error/error.component';
 
@@ -21,8 +20,7 @@ import { ErrorComponent } from './error/error.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule,
-    DataTablesModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

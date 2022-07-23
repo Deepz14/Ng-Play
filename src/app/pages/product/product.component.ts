@@ -1,53 +1,44 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { ProductService } from '../../services/product.service';
-import { DataTableDirective } from 'angular-datatables';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit, AfterViewInit {
+export class ProductComponent implements OnInit {
 
-  @ViewChild(DataTableDirective) dtElement!: DataTableDirective
-  displayedColumns: string[] = ['id', 'name', 'category', 'date', 'quality', 'price', 'comment', 'actions'];
-  dataSource!: MatTableDataSource<any>;
+  displayedColumns: string[] = ['name', 'category', 'quality', 'price', 'comment', 'actions'];
   products: any;
-  dtOptions: DataTables.Settings = {}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  dataSource!: MatTableDataSource<any>;
+
   constructor(private dialog: MatDialog, private prdService: ProductService) { }
 
   ngOnInit(): void {
     this.getProducts();
 
-    this.prdService.getProductState().subscribe((state: any) => {
-      if (state){
-        this.getProducts();
-        this.prdService.resetProductState();
-      }
-    })
-  }
-
-   ngAfterViewInit(): void {
-     this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 50,
-      responsive: true
-    }
+    // this.prdService.getProductState().subscribe((state: any) => {
+    //   if (state){
+    //     this.getProducts();
+    //     this.prdService.resetProductState();
+    //   }
+    // })
   }
 
   getProducts(){
     this.prdService.getProduct().subscribe((res: any) => {
-      this.products = res
+      console.log(res);
+      this.products = res.products
        // Assign the data to the data source for the table to render
-      this.dataSource = new MatTableDataSource(res)
+      this.dataSource = new MatTableDataSource(res.products)
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
