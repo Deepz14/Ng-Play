@@ -8,3 +8,10 @@
     right: 0;
     background-color: white;
 }
+
+@media only screen and (max-width: 990px) {
+    .header {
+       width: 100%;
+       display: none;
+    }
+}
