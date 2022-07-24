@@ -11,10 +11,10 @@ export class PagesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // $('#sidebar-toggle').click(function(){
-    //   console.log('clicked');
-    //   $("#wrapper").toggleClass("toggled");
-    // })
+    $('#sidebar-toggle').click(function(){
+      console.log('clicked');
+      // $("#wrapper").toggleClass("toggled");
+    })
   }
 
 }

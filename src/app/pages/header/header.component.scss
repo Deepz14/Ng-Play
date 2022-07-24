@@ -1,17 +1,44 @@
 .header{
     position: fixed;
     padding: 10px 16px;
-    width: calc(100vw - 260px);
+    width: 100%;
     box-shadow: 1px 0px 1px 0px #aaa;
-    z-index: 1000;
+    z-index: 5;
     top: 0;
-    right: 0;
     background-color: white;
+    // background-color: rgb(200, 118, 118);
+}
+
+.nav-item {
+    padding: 0.3rem 0.8rem;
+}
+
+.active>.nav-link {
+    background-color: #5383c6;
+    color: #ffffff;
+}
+
+.nav-link {
+    position: relative;
+    border-radius: 0.3rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.02rem;
+    color: #4d4d4d;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    background-color: #f7f6f6;
+}
+
+.material-icons {
+    margin-right: 1.3rem;
 }
 
 @media only screen and (max-width: 990px) {
     .header {
        width: 100%;
-       display: none;
+       margin-left: 0;
     }
 }

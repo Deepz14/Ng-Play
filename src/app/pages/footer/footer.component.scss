@@ -2,10 +2,19 @@
     max-height: 100%;
     padding-top: 0.8rem;
     margin-top: 0.5rem;
+    margin-left: 260px;
     background-color: white;
     overflow: hidden;
 }
 .footer-content{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 500;
+}
+
+@media screen and (max-width: 990px) {
+    .footer{
+        margin-left: 0;
+    }
 }

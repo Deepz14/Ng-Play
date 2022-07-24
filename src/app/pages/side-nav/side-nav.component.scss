@@ -1,14 +1,14 @@
 .sidebar{
-    width: 260px;
+    width: 240px;
     height: 100%;
     position: fixed;
-    top: 0;
+    margin-top: 4rem;
     left: 0;
     box-shadow: 0 0 1px 0 #aaa;
+    z-index: 3;
 }
 .sidebar-brand{
     padding: 1rem 0rem 1rem 2rem;
-    height: 60px;
     box-shadow: 0 0 1px 0 #aaa;
 }
 .sidebar-menu{
@@ -35,5 +35,29 @@
     background-color: #f7f6f6;
 }
 .material-icons{
-    margin-right: 1.3rem;
+    margin-right: 1.6rem;
+}
+
+@media only screen and (max-width: 990px) {
+    .sidebar{
+        width: 90px;
+    }
+    .material-icons{
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    .nav-link {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .sidebar{
+        display: none;
+    }
 }
