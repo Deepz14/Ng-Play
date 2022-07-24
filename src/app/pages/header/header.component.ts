@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 declare const $: any;
 @Component({
@@ -8,13 +8,18 @@ declare const $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  is_toogled: boolean = false;
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
-     $('#sidebar-toggle').click(function(){
-      console.log('clicked');
-      $("#collapse-menu").toggleClass("toggled");
-    })
+  }
+
+  ontoogle(){
+    this.is_toogled = !this.is_toogled;
+  }
+
+  onSidebarClick(){
+    this.is_toogled = false
   }
 
 }

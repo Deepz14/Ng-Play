@@ -1,7 +1,7 @@
 <div class="header">
     <nav class="navbar-container">
         <div class="container-fluid d-flex align-item-center">
-            <button mat-icon-button [disableRipple]="true" data-toggle="collapse-menu" data-target="#collapseWidthExample"  class="toggle-button" id="sidebar-toggle">
+            <button mat-icon-button (click)="ontoogle()" [disableRipple]="true" data-toggle="collapse-menu" data-target="#collapseWidthExample"  class="toggle-button" id="sidebar-toggle">
                 <mat-icon>menu</mat-icon>
             </button>
             <div class="brand-container">
@@ -14,8 +14,8 @@
     </nav>
 </div>
 
-<aside id="collapse-menu" class="collapse-menu">
-    <ul class="navbar-nav">
+<aside class="collapse-menu" [ngClass]="is_toogled ? 'collapse-menu-toggled' : ''" >
+    <ul class="navbar-nav" (click)="onSidebarClick()">
         <li routerLinkActive="active" class="nav-item">
             <a class="nav-link" [routerLink]="['/page']">
                 <i class="material-icons">shopping_basket</i>

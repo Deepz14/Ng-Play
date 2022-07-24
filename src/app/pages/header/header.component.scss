@@ -39,8 +39,9 @@
     display: none;
 }
 
-#collapse-menu{
+.collapse-menu{
     display: none;
+    overflow-y: auto;
 }
 
 @media only screen and (max-width: 990px) {
@@ -52,15 +53,16 @@
 
 @media screen and (max-width: 770px) {
     .toggle-button {
-        display: inline;
+        display: block;
     }
-    .toggled {
+    .collapse-menu-toggled{
         display: inline;
-        position: absolute;
+        position: fixed;
         width: 240px;
         margin-top: 4.5rem;
         height: 100%;
         z-index: 5;
         background-color: white;
+        backdrop-filter: blur(10px);
     }
 }
