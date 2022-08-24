@@ -12,24 +12,24 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProduct(){
-    return this.http.get('http://localhost:5000/products/');
+    return this.http.get('http://localhost:8080/products/');
   }
 
   getProductById(pk: any){
-    return this.http.get(`http://localhost:5000/products/${pk}/`);
+    return this.http.get(`http://localhost:80800/products/${pk}/`);
   }
 
   addProduct(payload: any){
     let headers = new HttpHeaders({'content-type': 'application/json','Accept': 'application/json'})
-    return this.http.post('http://localhost:5000/products/', payload);
+    return this.http.post('http://localhost:8080/products/', payload);
   }
 
   editProduct(pk: any, payload: any){
-    return this.http.put(`http://localhost:5000/products/${pk}/`, payload);
+    return this.http.put(`http://localhost:8080/products/${pk}/`, payload);
   }
 
   deleteProduct(pk: any){
-    return this.http.delete(`http://localhost:5000/products/${pk}/`);
+    return this.http.delete(`http://localhost:8080/products/${pk}/`);
   }
 
   getProductState(){

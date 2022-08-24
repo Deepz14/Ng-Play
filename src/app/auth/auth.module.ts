@@ -4,6 +4,7 @@ import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
     {path: '', redirectTo: 'account', pathMatch: 'full'},
@@ -22,7 +23,9 @@ const routes: Routes = [
     declarations: [AuthComponent, LoginComponent, SignupComponent],
     imports: [
         CommonModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 
