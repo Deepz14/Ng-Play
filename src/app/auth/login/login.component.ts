@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -25,9 +27,16 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.loginForm.getRawValue()).subscribe((res: any) => {
-      console.log('response', res);
+      swal.fire({
+        text: `${res.status}`,
+        icon: 'success'
+      });
+      this.router.navigate(['/page']);
     }, (error: any) => {
-      console.log('error', error);
+      swal.fire({
+        text: `${error.error.message}`,
+        icon: 'error'
+      });
     })
   }
 

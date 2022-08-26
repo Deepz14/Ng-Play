@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -25,9 +27,16 @@ export class SignupComponent implements OnInit {
     }
 
     this.authService.signUp(this.signupForm.getRawValue()).subscribe((res: any) => {
-      console.log('response', res);
+      swal.fire({
+        text: `${res.status}`,
+        icon: 'success'
+      });
+      this.router.navigate(['/auth/account/login']);
     }, (error: any) => {
-      console.log('Error: ', error);
+      swal.fire({
+        text: `${error.error.message}`,
+        icon: 'error'
+      });
     })
   }
 
