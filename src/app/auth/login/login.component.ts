@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
+import { GoogleApisService } from 'src/app/services/google-apis.service';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,8 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, 
+    private google: GoogleApisService, private oAuthService: OAuthService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -38,6 +41,10 @@ export class LoginComponent implements OnInit {
         icon: 'error'
       });
     })
+  }
+
+  googleLogin(){
+    this.google.googleLogin();
   }
 
 }

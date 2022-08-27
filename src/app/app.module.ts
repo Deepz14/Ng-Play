@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppLoaderModule } from './utils/app-loader/app-loader.module';
 import { LoadingInterceptor } from './utils/interceptors/loading-interceptor';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoadingInterceptor } from './utils/interceptors/loading-interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    OAuthModule.forRoot(),
     AppLoaderModule,
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
