@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -7,29 +8,30 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductService {
 
+  private apiUrl = environment.serverApi;
   private isProductAdd = new BehaviorSubject(false);
   private productEdited = new BehaviorSubject(null);
   constructor(private http: HttpClient) { }
 
   getProduct(){
-    return this.http.get('http://localhost:8080/products/');
+    return this.http.get(`${this.apiUrl}/products/`);
   }
 
   getProductById(pk: any){
-    return this.http.get(`http://localhost:80800/products/${pk}/`);
+    return this.http.get(`${this.apiUrl}/products/${pk}/`);
   }
 
   addProduct(payload: any){
     let headers = new HttpHeaders({'content-type': 'application/json','Accept': 'application/json'})
-    return this.http.post('http://localhost:8080/products/', payload);
+    return this.http.post(`${this.apiUrl}/products/`, payload);
   }
 
   editProduct(pk: any, payload: any){
-    return this.http.put(`http://localhost:8080/products/${pk}/`, payload);
+    return this.http.put(`${this.apiUrl}/products/${pk}/`, payload);
   }
 
   deleteProduct(pk: any){
-    return this.http.delete(`http://localhost:8080/products/${pk}/`);
+    return this.http.delete(`${this.apiUrl}/products/${pk}/`);
   }
 
   getProductState(){
