@@ -1,4 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GoogleApisService } from 'src/app/services/google-apis.service';
 
 declare const $: any;
 @Component({
@@ -9,7 +11,8 @@ declare const $: any;
 export class HeaderComponent implements OnInit {
 
   is_toogled: boolean = false;
-  constructor(private renderer: Renderer2) { }
+  constructor(private router: Router,
+    private googleService: GoogleApisService ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +23,11 @@ export class HeaderComponent implements OnInit {
 
   onSidebarClick(){
     this.is_toogled = false
+  }
+
+  logout(){
+    this.googleService.logout();
+    this.router.navigate(['/auth/account/login']);
   }
 
 }
