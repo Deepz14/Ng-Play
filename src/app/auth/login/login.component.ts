@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { GoogleApisService } from 'src/app/services/google-apis.service';
@@ -14,6 +14,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  submit: boolean = false;
   constructor(private authService: AuthService, private router: Router, 
     private google: GoogleApisService, private oAuthService: OAuthService) { }
 
@@ -24,7 +25,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  get f(): {[key: string]: AbstractControl}{
+    return this.loginForm.controls;
+  }
+
   login(){
+    this.submit = true;
     if(this.loginForm.invalid){
       return;
     }

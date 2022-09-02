@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { AuthService } from 'src/app/services/auth.service';
+import { GoogleApisService } from 'src/app/services/google-apis.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
-  constructor(private authService: AuthService, private router: Router) { }
+  submit: boolean = false;
+  constructor(private authService: AuthService, 
+      private router: Router, private google: GoogleApisService) { }
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -21,7 +24,12 @@ export class SignupComponent implements OnInit {
     })
   }
 
+  get f(): {[key: string]: AbstractControl}{
+    return this.signupForm.controls;
+  }
+
   signup(){
+    this.submit = true;
     if(this.signupForm.invalid){
       return ;
     }
@@ -38,6 +46,10 @@ export class SignupComponent implements OnInit {
         icon: 'error'
       });
     })
+  }
+
+  googleLogin(){
+    this.google.googleLogin();
   }
 
 }
