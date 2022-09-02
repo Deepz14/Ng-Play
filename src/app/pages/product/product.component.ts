@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { ProductService } from '../../services/product.service';
+import { Fakedb } from 'src/app/services/fakedb';
 
 @Component({
   selector: 'app-product',
@@ -20,11 +21,11 @@ export class ProductComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   dataSource: MatTableDataSource<any>;
 
-  constructor(private dialog: MatDialog, private prdService: ProductService) { }
+  constructor(private dialog: MatDialog, private prdService: ProductService, private db: Fakedb) { }
 
   ngOnInit(): void {
-    this.getProducts();
-
+    // this.getProducts();
+    this.setDataSource(this.db.products);
     // this.prdService.getProductState().subscribe((state: any) => {
     //   if (state){
     //     this.getProducts();
@@ -35,13 +36,15 @@ export class ProductComponent implements OnInit {
 
   getProducts(){
     this.prdService.getProduct().subscribe((res: any) => {
-      console.log(res);
       this.products = res.products
        // Assign the data to the data source for the table to render
-      this.dataSource = new MatTableDataSource(res.products)
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
     })
+  }
+
+  setDataSource(data){
+    this.dataSource = new MatTableDataSource(data)
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {

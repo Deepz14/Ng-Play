@@ -11,6 +11,7 @@ declare const $: any;
 export class HeaderComponent implements OnInit {
 
   is_toogled: boolean = false;
+  show_userdropdown: boolean = false;
   constructor(private router: Router,
     private googleService: GoogleApisService ) { }
 
@@ -19,6 +20,10 @@ export class HeaderComponent implements OnInit {
 
   ontoogle(){
     this.is_toogled = !this.is_toogled;
+  }
+  
+  onUserDropDown(){
+    this.show_userdropdown = !this.show_userdropdown;
   }
 
   onSidebarClick(){

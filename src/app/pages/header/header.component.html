@@ -12,18 +12,17 @@
            
         </div>
         <div class="profile-section">
-            <div mat-icon-button [matMenuTriggerFor]="menu" class="profile-user">
+            <div mat-icon-button class="profile-user" (click)="onUserDropDown()">
                 <div class="profile-rounded">
                     <div class="user-logo">
                        <p class="user-name">D</p>
                     </div>
                 </div>  
             </div>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="logout()">
-                  <span class="text-danger">Logout</span>
-                </button>
-            </mat-menu>
+            <ul class="user-profile-dropdown" [ngClass]="show_userdropdown ? 'showMenu' : ''">
+                <li><div><p>Account</p></div></li>
+                <li (click)="logout()"><div><p>Sign out</p></div></li>
+            </ul>
         </div>
     </nav>
 </div>
