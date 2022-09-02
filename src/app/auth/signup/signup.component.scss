@@ -5,8 +5,21 @@
     max-width: 480px;
 }
 
+.social-btn-group{
+    background-color: #dc3545;
+    border-radius: 0.25rem;
+    padding: .375rem .75rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .btn-text-name{
     font-weight: 500;
+    font-size: 16px;
+    padding: 5px;
 }
 
 @media only screen and (max-width: 600px) {
