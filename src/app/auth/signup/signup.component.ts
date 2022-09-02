@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
         text: `${res.status}`,
         icon: 'success'
       });
-      this.router.navigate(['/auth/account/login']);
+      this.router.navigate(['/page']);
     }, (error: any) => {
       swal.fire({
         text: `${error.error.message}`,
