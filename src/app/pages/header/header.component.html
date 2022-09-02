@@ -29,24 +29,37 @@
 </div>
 
 <aside class="collapse-menu" [ngClass]="is_toogled ? 'collapse-menu-toggled' : ''" >
-    <ul class="navbar-nav" (click)="onSidebarClick()">
-        <li routerLinkActive="active" class="nav-item">
-            <a class="nav-link" [routerLink]="['/page']">
-                <i class="las la-shopping-basket"></i>
-                Products
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/page']">
-                <i class="las la-user"></i>
-                Customers
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/page']">
-                <i class="las la-shopping-cart"></i>
-                Sales
-            </a>
-        </li>
-    </ul>
+    <nav>
+        <div class="d-flex justify-content-between">
+            <div>
+                <h3 class="mobile-view-brand-logo-name d-flex align-item-center justify-item-center">
+                    <i class="las la-infinity"></i> Deepz Dev
+                </h3> 
+            </div>
+
+            <button mat-icon-button (click)="ontoogle()" [disableRipple]="true" data-toggle="collapse-menu" data-target="#collapseWidthExample"  class="toggle-button" id="sidebar-toggle">
+                <i class="las la-angle-double-left"></i>
+            </button>
+        </div>
+        <ul class="navbar-nav" (click)="onSidebarClick()">
+            <li routerLinkActive="active" class="nav-item">
+                <a class="nav-link" [routerLink]="['/page/products']">
+                    <i class="las la-shopping-basket"></i>
+                    Products
+                </a>
+            </li>
+            <li routerLinkActive="active" class="nav-item">
+                <a class="nav-link" [routerLink]="['/page/customers']">
+                    <i class="las la-user"></i>
+                    Customers
+                </a>
+            </li>
+            <li routerLinkActive="active" class="nav-item">
+                <a class="nav-link" [routerLink]="['/page/sales']">
+                    <i class="las la-shopping-cart"></i>
+                    Sales
+                </a>
+            </li>
+        </ul>
+    </nav>
 </aside>
